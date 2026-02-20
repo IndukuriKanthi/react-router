@@ -1,0 +1,101 @@
+//Frontend - React
+//react is a single page ui - so all components (when pressed ) should appear in the same page - for this we need router.
+//react-router
+
+//BrowserRouter - parent component (everything including in this are all navigations)
+//Routes - acts like switch case (inside BrowserRouter)
+//Route - tells exactly where to go when navigated
+
+//steps:-
+//create react app
+//in those keep the folders from git (sir's)
+//install react-router and react-router-dom dependencies
+//react-router - used for navigation
+//react-router-dom - has the libraries used for navigation with react-router
+
+//now in app.js:-
+
+// import { BrowserRouter , Route , Routes } from "react-router"
+// //this shd be commented - import Navbar from "./components/Navbar" 
+// import AppLayout from "./layouts/AppLayout"
+// import Dashboard from "./pages/Dashboard"
+// import Login from "./pages/Login"
+// import Profile from "./pages/Profile"
+
+// function App() {
+// //navbar is not a route component ,so it shd not be inside routes
+// //navbar shd not be inside browserroutes as well because it rerenders the entire page (it shd only rerender the below part of profile,dashboard,login options)
+
+//   return (
+//     <>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route element={<AppLayout />}>
+//             <Route path="/" element={<Login />}/>
+//             <Route path="/login" element={<Login />}/>
+//             <Route path="/dashboard" element={<Dashboard />}/>
+//             <Route path="/profile" element={<Profile />}/>
+//           </Route>
+//         </Routes>
+//       </BrowserRouter>
+//     </>
+//   )
+// }
+
+// export default App
+
+//now create a new folder layouts in that AppLayout (as we are not placing Navbar in app.js separate layout is used)
+
+// import Navbar from "../components/Navbar"
+// import { Outlet } from "react-router"
+
+// const AppLayout = () =>{
+//     return(
+//         <>
+//             <Navbar />
+//             <div style={{
+//                 border: '1px sol',
+//                 padding: '16px',
+//             }}>
+//             <Outlet />
+//             </div>
+//         </>
+//     )
+// }
+
+// export default AppLayout
+
+//now update Navbar.jsx (initially we are using href - refreshes the entire page - we don't want that)
+//(so we are not using href, instead we use Link)
+//Link is used to directly goes to path/route without refreshing (it only rerenders the part below the options)
+
+// import React from 'react'
+// import { Link } from 'react-router'
+
+// const Navbar = () => {
+//   return (
+//     <div>
+//         <nav>
+//             <ul>
+//                 <li>
+//                     <Link to='/dashboard'>
+//                     Dashboard
+//                     </Link>
+//                 </li>
+//                 <li>
+//                     <Link to='/profile'>
+//                     Profile
+//                     </Link>
+//                 </li>
+//                 <li>
+//                     <Link to='/login'>
+//                     Login
+//                     </Link>
+//                 </li>
+//             </ul>
+//         </nav>
+//     </div>
+//   )
+// }
+
+// export default Navbar
